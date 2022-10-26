@@ -6,8 +6,16 @@ Introduction to Robotics laboratory homeworks, taken in the 3rd year at the Facu
 RGB LED CONTROLLED BY DIGITAL ELECTRONICS
 
 •Components: RBG LED (1 minimum), potentiometers (3 minimum), resistors and wires (per logic).
+
+#### TASKS:
+•Components: RBG LED (1 minimum), potentiometers (3 minimum), resistors and wires (per logic).
+
 •Technical Task: Use a separate potentiometer in controlling each of the colors of the RGB LED (Red, Green and Blue). The control must be done with digital electronics.
+
 •Coding task: Coding style is of utmost importance. You must have aperfectly clean code in order to receive the maximum grade.
+
+
+##### The [code](https://github.com/BogdanPopel/IntroductionToRobotics/blob/main/Tema%201%20-%20RGBwithPotentiometers.ino) for this build can be found here.
 
 #### [VIDEO DEMONSTRATION](https://www.youtube.com/watch?v=3S08bdfMk_I)
 
