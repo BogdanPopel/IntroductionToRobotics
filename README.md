@@ -15,11 +15,11 @@ Introduction to Robotics laboratory homeworks, taken in the 3rd year at the Facu
 
 ### SEE IT IN ACTION:
 
-##### The [code](https://github.com/BogdanPopel/IntroductionToRobotics/blob/main/Tema%201%20-%20RGBwithPotentiometers.ino) for this build can be found here.
+#### The [code](https://github.com/BogdanPopel/IntroductionToRobotics/blob/main/Tema%201%20-%20RGBwithPotentiometers.ino) for this build can be found here.
 
-#### [VIDEO DEMONSTRATION](https://www.youtube.com/watch?v=3S08bdfMk_I)
+#### [Video demonstration](https://www.youtube.com/watch?v=3S08bdfMk_I)
 
-##### [This](https://youtu.be/3S08bdfMk_I?t=61) is how it looks in lower light conditions.
+#### [This](https://youtu.be/3S08bdfMk_I?t=61) is how it looks in lower light conditions.
 
 The circuit is a fragile build, due to imperfect connections between the cables, potentiometers and the breadboard. Therefore, any movement may cause flickering in the LED. To see this, check out [this part of the demo](https://youtu.be/3S08bdfMk_I?t=117).
 
