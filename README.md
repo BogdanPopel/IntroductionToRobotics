@@ -11,7 +11,7 @@ Introduction to Robotics laboratory homeworks, taken in the 3rd year at the Facu
 
 •Technical Task: Use a separate potentiometer in controlling each of the colors of the RGB LED (Red, Green and Blue). The control must be done with digital electronics.
 
-•Coding task: Coding style is of utmost importance. You must have aperfectly clean code in order to receive the maximum grade.
+•Coding task: Coding style is of utmost importance. You must have a perfectly clean code in order to receive the maximum grade.
 
 ### SEE IT IN ACTION:
 
