@@ -66,6 +66,20 @@ Important to know: Pressing the button in any state other than state 1 should NO
 
 ### SEE IT IN ACTION:
 
-#### The [code](https://github.com/BogdanPopel/IntroductionToRobotics/blob/main/Tema%201%20-%20RGBwithPotentiometers.ino) for this build can be found here.
+#### The [code](https://github.com/BogdanPopel/IntroductionToRobotics/blob/main/TrafficLight.ino++++++++++++++++++++) for this build can be found here.
 
-#### [Video demonstration](https://www.youtube.com/watch?v=3S08bdfMk_I)
+#### [Video demonstration](https://youtu.be/PXnF78SRz44)
+
+<details>
+<summary>This what the end product looks like:</summary>
+
+![WhatsApp Image 2022-11-03 at 00 45 04](https://user-images.githubusercontent.com/79463256/199616720-2daaf8ba-8761-4873-8160-88ad13662cf7.jpeg)
+
+![WhatsApp Image 2022-11-03 at 00 45 06](https://user-images.githubusercontent.com/79463256/199616724-a1717c5c-2d5a-4a12-be2a-86b7c10420dc.jpeg)
+
+![WhatsApp Image 2022-11-03 at 00 45 05 (2)](https://user-images.githubusercontent.com/79463256/199616728-2c6205c7-51ca-481f-8bc8-fbefc14eb5f1.jpeg)
+
+![WhatsApp Image 2022-11-03 at 00 45 05 (1)](https://user-images.githubusercontent.com/79463256/199616730-5647d9c7-e186-445e-9076-f4bbee9165c8.jpeg)
+
+![WhatsApp Image 2022-11-03 at 00 45 05](https://user-images.githubusercontent.com/79463256/199616731-3054c80e-ab3d-4f10-8112-0e874d6e90d5.jpeg)
+</details>
