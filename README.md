@@ -38,7 +38,7 @@ The circuit is a fragile build, due to imperfect connections between the cables,
 
 # Homework no.2 
 
-## Traffic Lights with Audio
+## Traffic Lights with Audio Feedback
 
 ### Tasks:
 
