@@ -60,8 +60,9 @@ Important to know: Pressing the button in any state other than state 1 should NO
 <summary>How should the input of a button be read?</summary>
 
   The input is registered via a ISR() function called Interrupt, which receives the signal from a button. The signal is then debounced, to be sure it didn't register from interferences or a 'half push' of the button. Esentially, it makes sure that the user pushed the button on purpose and that the push of the button was well executed, resulting in a continous signal. Arduino reads 0s and 1s from the button. To understand it better, you can view the signal recieved from a button like this:
-  -bad signal: 1 1 0 0 1 1 0 0 (with ISR) we ignore skip this part
-  - good signal: 1 1 1 1 1 1 1 
+  
+  - bad signal: 1 1 0 0 1 1 0 0 (with ISR) -> we skip reading this part
+  - good signal: 1 1 1 1 1 1 1 -> we consider the button pressed, when it sends a signal that looks like this
 </details>
 
 ### SEE IT IN ACTION:
