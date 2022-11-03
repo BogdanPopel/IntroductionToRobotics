@@ -67,8 +67,7 @@ Important to know: Pressing the button in any state other than state 1 should NO
 
 ### SEE IT IN ACTION:
 
-#### The [code](https://github.com/BogdanPopel/IntroductionToRobotics/blob/main/TrafficLight.ino++++++++++++++++++++) for this build can be found here.
-
+#### The [code](https://github.com/BogdanPopel/IntroductionToRobotics/blob/main/TrafficLight.ino) is here.
 #### [Video demonstration](https://youtu.be/PXnF78SRz44)
 
 <details>
