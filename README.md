@@ -7,7 +7,7 @@ Introduction to Robotics laboratory homeworks, taken in the 3rd year at the Facu
 
 
 ### TASKS:
-•Components: RBG LED (1 minimum), potentiometers (3 minimum), resistors and wires (per logic).
+•Components: 1 RBG LED, 3 Potentiometers, Resistors and Wires (per logic).
 
 •Technical Task: Use a separate potentiometer in controlling each of the colors of the RGB LED (Red, Green and Blue). The control must be done with digital electronics.
 
@@ -42,13 +42,13 @@ The circuit is a fragile build, due to imperfect connections between the cables,
 
 ### Tasks:
 
-•Components:  5 LEDs, 1 button, 1 buzzer, resistors and wires (per logic)
+•Components:  5 LEDs, 1 Button, 1 Buzzer, Resistors and Wires (per logic)
 
 •Technical Task: Building  the  traffic  lights  for  a  crosswalk. 2 LEDs are used to represent the traffic lights for people and 3 for the traffic lights for cars. Also, a buzzer is used to signal to the pedestrians when the light goes green and also it starts buzzing faster when it's about to go red, along with the flashing of the green LED.
 
 •Coding task: Coding style is of utmost importance.
 
-  The system encapsulates 4 states that it goes though, consecutively:
+  The system encapsulates 4 states that it goes through, consecutively:
   
 1) green light for cars, red  light for people, no sounds. Duration: indefinite, changed by pressing the button.
 2) (initiated by counting down 8 seconds after a button press): the light should be yellow for  cars, red for people and no sounds. Duration: 3 seconds.
@@ -82,4 +82,43 @@ Important to know: Pressing the button in any state other than state 1 should NO
 ![WhatsApp Image 2022-11-03 at 00 45 05 (1)](https://user-images.githubusercontent.com/79463256/199616730-5647d9c7-e186-445e-9076-f4bbee9165c8.jpeg)
 
 ![WhatsApp Image 2022-11-03 at 00 45 05](https://user-images.githubusercontent.com/79463256/199616731-3054c80e-ab3d-4f10-8112-0e874d6e90d5.jpeg)
+</details>
+
+
+# Homework no.3
+
+## 7 Segment Display Controlled By Joystick
+
+### Tasks:
+
+•Components:   1  Seven Segment Display (Common Cathode in my case), 1  Joystick,  Resistors and Wires (per logic)
+
+•Technical Task: This task involves taking control of each segment by moving between them via the joystick, rendering each one of them on or off, by choice. Essentially, I am drawing on the display with a joystick, being able to render each segment on or off. The movement between the segments is meant to feel as natural as possible. Also, I am able to 'reset' the display by pressing down on the joystick for a minimum of 3 seconds, meaning that all the segments are turned off and the controlled segment becomes the DP (decimal point). 
+
+•Coding task: Coding style is of utmost importance.
+
+  The system encapsulates 2 states that it goes through, changed by the push of a button:
+  
+1) default, but also initiated after a button press in State 2: Current position (segment) is blinking. The joystick can be used to move to the segment's neighbours. Short pressing the  button toggles the second state. Long pressing the button in state 1 resets the entire display by turning all the segments OFF and moving the current position to the decimal point.
+2) initiated after a button press in State 1: The current segment stops blinking, adopting the state of the segment before selection (ON or OFF). Toggling the X axis changes the segment state  from ON to OFF or from OFF to  ON. Clicking the joystick should save the segment state and exit back to state 1.
+
+### SEE IT IN ACTION:
+
+#### The [code](https://github.com/BogdanPopel/IntroductionToRobotics/blob/main/Homework%233%207SDwithJoystick.ino) is here.
+#### [Video demonstration](https://www.youtube.com/watch?v=h8aT8BLyIBo)
+
+<details>
+<summary>This what the end product looks like:</summary>
+
+![WhatsApp Image 2022-11-10 at 01 43 22 (1)](https://user-images.githubusercontent.com/79463256/200965850-fc124e7a-2e42-4714-80e9-273b2ac0a7aa.jpeg)
+
+![WhatsApp Image 2022-11-10 at 01 43 22](https://user-images.githubusercontent.com/79463256/200965868-87731b46-e704-47bd-86e5-fe83e84b1239.jpeg)
+
+![WhatsApp Image 2022-11-10 at 01 43 21 (2)](https://user-images.githubusercontent.com/79463256/200965881-016658c4-4f35-43a7-9d31-c995dc28477a.jpeg)
+
+![WhatsApp Image 2022-11-10 at 01 43 21 (1)](https://user-images.githubusercontent.com/79463256/200965909-e63b2ed5-94df-4afe-8218-65548b65d9b3.jpeg)
+
+![WhatsApp Image 2022-11-10 at 01 43 21](https://user-images.githubusercontent.com/79463256/200965941-8722d15f-26c7-48cc-a78f-5f2ddabed283.jpeg)
+
+![WhatsApp Image 2022-11-10 at 01 43 20](https://user-images.githubusercontent.com/79463256/200965953-b90542c5-101b-4b11-8c41-612872c4530d.jpeg)
 </details>
