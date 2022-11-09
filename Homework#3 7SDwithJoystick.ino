@@ -80,14 +80,14 @@ void setup() {
 
 void loop() {
   
-  if(buttonWasPressed && buttonWasReleased){
+  if(buttonWasPressed && buttonWasReleased) {
     buttonWasPressed = false;
     state = changeState(state);
   }
   else{
     if(buttonWasPressed && !buttonWasReleased && state == FIRST_STATE && millis() - buttonWasPressedTimestamp > resetTime) {
       buttonWasPressed = false;
-      for(int i = 0; i < segmentSize; i++){
+      for(int i = 0; i < segmentSize; i++) {
         segmentStates[i] = LOW;
         currentSegment = DP;
       }
@@ -132,8 +132,8 @@ void interruptHandler() {
 }
 
 
-void displaySegments(){
-  for(unsigned int segIndex = 0; segIndex < segmentSize; segIndex++){
+void displaySegments() {
+  for(unsigned int segIndex = 0; segIndex < segmentSize; segIndex++) {
     if(segIndex == currentSegment) {
       continue;
     }
@@ -143,7 +143,7 @@ void displaySegments(){
 
 
 byte changeState(byte currState) {
-  if(currState == FIRST_STATE){
+  if(currState == FIRST_STATE) {
     currState = SECOND_STATE;
   }
   else {
@@ -158,22 +158,22 @@ unsigned int switchSegment(unsigned int segment) {
   static byte previouslyMoved;
   xValue = analogRead(pinX);
   yValue = analogRead(pinY);
-  if(yValue >= yMaxTreshold){
+  if(yValue >= yMaxTreshold) {
     move = DOWN;
   }
-  if(yValue <= yMinTreshold){
+  if(yValue <= yMinTreshold) {
     move = UP;
   }
-  if(xValue >= xMaxTreshold){
+  if(xValue >= xMaxTreshold) {
     move = RIGHT;
   } 
-  if(xValue <= xMinTreshold){+
+  if(xValue <= xMinTreshold){ 
     move = LEFT;    
   }
-  if(move == STAY){
+  if(move == STAY) {
     previouslyMoved = false;
   }
-  else{
+  else {
     if(!previouslyMoved) {
       previouslyMoved = true;
       return movementScheme[segment][move];
@@ -188,7 +188,7 @@ void defaultState() {
   static unsigned long lastLedStateChange = 0;
   unsigned long currentTime = millis();
 
-  if(currentTime - lastLedStateChange > blinkDelay){
+  if(currentTime - lastLedStateChange > blinkDelay) {
     digitalWrite(segments[currentSegment], ledState);
     ledState = !ledState;
     lastLedStateChange = currentTime;
@@ -199,10 +199,10 @@ void defaultState() {
 void toggleSegmentOutput(unsigned int segment) {
   
   xValue = analogRead(pinX);
-  if(xValue >= xMaxTreshold){
+  if(xValue >= xMaxTreshold) {
     segmentStates[segment] = HIGH;
   }
-  if(xValue <= xMinTreshold){
+  if(xValue <= xMinTreshold) {
     segmentStates[segment] = LOW;
   }
   digitalWrite(segments[segment], segmentStates[segment]);
