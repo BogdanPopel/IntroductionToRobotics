@@ -102,6 +102,12 @@ Important to know: Pressing the button in any state other than state 1 should NO
 1) default, but also initiated after a button press in State 2: Current position (segment) is blinking. The joystick can be used to move to the segment's neighbours. Short pressing the  button toggles the second state. Long pressing the button in state 1 resets the entire display by turning all the segments OFF and moving the current position to the decimal point.
 2) initiated after a button press in State 1: The current segment stops blinking, adopting the state of the segment before selection (ON or OFF). Toggling the X axis changes the segment state  from ON to OFF or from OFF to  ON. Clicking the joystick should save the segment state and exit back to state 1.
 
+  These are the allowed transitions between the segments:
+  [Code Representation](https://github.com/BogdanPopel/IntroductionToRobotics/blob/4b84fe34710972f7cb5cabef7e2bfc3be2698b8d/Homework%233%207SDwithJoystick.ino#L58)
+  
+  ![tranzitii](https://user-images.githubusercontent.com/79463256/200967395-16e1aadd-9c16-4e8d-8f01-21188fe225b1.png)
+
+  
 ### SEE IT IN ACTION:
 
 #### The [code](https://github.com/BogdanPopel/IntroductionToRobotics/blob/main/Homework%233%207SDwithJoystick.ino) is here.
