@@ -133,3 +133,43 @@ Important to know: Pressing the button in any state other than state 1 should NO
 
 ![WhatsApp Image 2022-11-10 at 01 43 20](https://user-images.githubusercontent.com/79463256/200965953-b90542c5-101b-4b11-8c41-612872c4530d.jpeg)
 </details>
+
+
+# Homework no.4
+
+## A 4 Digit 7 Segment Display Controlled By Joystick
+
+### Tasks:
+
+•Components: A 4 Digit  7-Segment Display, a 74hc595 shift register, 1 Joystick, Resistors and Wires (per logic)
+
+•Technical Task: This task involves taking control of each Display by moving between them via the joystick, rendering each one of them selected or not, by pressing down on the joystick. Afterwards, I am able to increment numbers on the display with the joystick by moving it up or down. It is able to display numbers written in hex, from 0 to FFFF, which is 65,535. The movement between the displays is meant to feel as natural as possible. Also, I am able to 'reset' the displays by pressing down on the joystick for a minimum of 3 seconds, meaning that all the displays show '0' and the controlled display becomes the first one. 
+
+•Coding task: Coding style is of utmost importance.
+
+  The system encapsulates 2 states that it goes through, changed by pressing down on the joystick:
+  
+1) Default, but also initiated after a button press in State 2: Current position (display) is shown by the blinking decimal point. The joystick can be used to move to the display's neighbours. Short pressing the  button toggles the second state. Long pressing the button in state 1 resets the entire display by turning all the segmentsa OFF and moving the current position to the decimal point.
+2) Initiated after a button press in State 1: The current decimal point stops blinking, remaining ON until a state change is made (press down on joystick). Toggling the Y axis increments the digits shown on the selected display. Clicking the joystick should save the digit on the display and go back to state 1.
+
+
+### SEE IT IN ACTION:
+
+#### The full [code](https://github.com/BogdanPopel/IntroductionToRobotics/blob/main/Homework%234-4x7SDwithJoystick.ino) is here.
+#### [Video demonstration](https://youtu.be/BHc8_yTtxMI)
+
+<details>
+<summary>This what the end product looks like:</summary>
+
+![WhatsApp Image 2022-11-17 at 04 00 58 (2)](https://user-images.githubusercontent.com/79463256/202335817-ee061b8c-fb73-40db-8995-25697f22c3d7.jpeg)
+
+![WhatsApp Image 2022-11-17 at 04 00 58 (1)](https://user-images.githubusercontent.com/79463256/202335824-5108180c-3398-448c-adb2-00c0c0d44ace.jpeg)
+
+![WhatsApp Image 2022-11-17 at 04 00 58](https://user-images.githubusercontent.com/79463256/202335829-9967df27-63ee-4ac7-963d-98f89fb33d25.jpeg)
+
+![WhatsApp Image 2022-11-17 at 04 00 57 (1)](https://user-images.githubusercontent.com/79463256/202335838-24b7c74c-f01c-43b3-80de-e68a6cf75169.jpeg)
+
+![WhatsApp Image 2022-11-17 at 04 00 57](https://user-images.githubusercontent.com/79463256/202335845-65223be6-acb7-45e4-b722-f15b5b7910ec.jpeg)
+
+</details>
+
