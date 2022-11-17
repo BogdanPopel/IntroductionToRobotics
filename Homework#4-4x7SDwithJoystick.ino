@@ -72,7 +72,6 @@ int displayDigits[DISPLAY_COUNT] = {
   segD1, segD2, segD3, segD4
 };
 void setup() {
-  // put your setup code here, to run once:
   pinMode(latchPin, OUTPUT);
   pinMode(clockPin, OUTPUT);
   pinMode(dataPin, OUTPUT);
@@ -143,17 +142,21 @@ void interruptHandler() {
 
 
 byte changeState(byte currState) {
-  Serial.print("Changed state: from ");
-  Serial.print(currState);
-  Serial.print(" to ");
+  if(DEBUG_MODE) {
+    Serial.print("Changed state: from ");
+    Serial.print(currState);
+    Serial.print(" to ");
+  }
   if(currState == FIRST_STATE) {
     currState = SECOND_STATE;
   }
   else {
     currState = FIRST_STATE;
   }
-  Serial.print(currState);
-  Serial.prinln("");
+  if(DEBUG_MODE) { 
+    Serial.print(currState);
+    Serial.prinln("");
+  }
   return currState;
 }
 
@@ -224,7 +227,6 @@ byte getDPState(byte dpState) {
 }
 
 void setDisplayOutput(unsigned int displayDigit) {
-  
   short int valueAdded = 0;
   yValue = analogRead(pinY);
   static byte didNotChangeValue = 0;
@@ -255,5 +257,4 @@ if(valueAdded == didNotChangeValue) {
           }
     }
   }
-  Serial.println(toBeDisplayed[displayDigit]);
 }
