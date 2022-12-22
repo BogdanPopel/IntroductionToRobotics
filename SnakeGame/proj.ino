@@ -56,7 +56,6 @@ String newPlayer = "";
 int newScore = 0;
 String emptyString = "";
 
-const int lineNumberForDescriptions = 1;
 char* introText = "Snake, brought to you by Nokia to enjoy! :)                ";
 char* aboutText = "Homework for IntroductionToRobotics by Popel Bogdan -> Snake Game               ";
 char* howToPlayText = "If you haven't heard of snake by now, there is no saving for you. Go play another game!                  ";
@@ -111,10 +110,10 @@ int letterToMap;
 int randomCol;
 int randomRow;
 unsigned long prevTimeGame = 0;
-bool food = true;
+bool shouldGenerateFood = true;
 int dotRowPosition = 0;
 int dotColPosition = 0;
-const int blinkTime = 300;
+const int blinkTime = 150;
 bool ledPower = true;
 int deleteDotPosition = 0;
 const int matrixDotNumber = 45;
@@ -162,7 +161,7 @@ void loop() {
     case INTRODUCTION:
       lcd.setCursor(1, 0);
       lcd.print("Snake Game");
-      scrollingMessage(introText, lineNumberForDescriptions);
+      scrollingMessage(introText, 1);
       currentMillis = millis();
 
       // skip intro
@@ -187,13 +186,13 @@ void loop() {
     case ABOUT:
       lcd.setCursor(5, 0);
       lcd.print("About");
-      scrollingMessage(aboutText, lineNumberForDescriptions);
+      scrollingMessage(aboutText, 1);
       readControlMenu(state);
       break;
     case HOW_TO_PLAY:
       lcd.setCursor(2, 0);
       lcd.print("How to play");
-      scrollingMessage(howToPlayText, lineNumberForDescriptions);
+      scrollingMessage(howToPlayText, 1);
       readControlMenu(state);
       break;
     case SETTINGS:
@@ -250,7 +249,7 @@ void snake() {
       tone(buzzerPin, 6500, 20);
     }
     newScore++;
-    food = true;
+    shouldGenerateFood = true;
     deleteDotPosition++;
   }
   returnToMenu();
@@ -299,19 +298,20 @@ void speed(float& speed) {
 
 
 void generateFood() {
-  if (food) {
+  if (shouldGenerateFood) {
     if (easyLevel) {
       randomRow = random(0, 8);
       randomCol = random(0, 8);
-    } else if (mediumLevel || hardLevel) {
+    } else 
+        if (mediumLevel || hardLevel) {
       randomRow = random(1, 7);
       randomCol = random(1, 7);
     }
-    food = false;
+    shouldGenerateFood = false;
   }
-  for (int i = 0; i <= deleteDotPosition; i++) {
+  for (int i = 0; i <= deleteDotPosition; i++) { //Delete dot position is also the size of the snake
     if (randomRow == rowSnakePosition[i] && randomCol == colSnakePosition[i]) {
-      food = true;
+      shouldGenerateFood = true;
     } else {
       if (millis() - previousTime >= blinkTime) {
         lc.setLed(0, randomRow, randomCol, ledPower);
@@ -407,7 +407,7 @@ void snakeDirection() {
 void deleteTail() {
   lc.setLed(0, rowSnakePosition[deleteDotPosition], colSnakePosition[deleteDotPosition], false);
   for (int i = deleteDotPosition; i > 0; i--) {
-    rowSnakePosition[i] = rowSnakePosition[i - 1];
+    rowSnakePosition[i] = rowSnakePosition[i - 1]; //make the tail go backwards in the array
     colSnakePosition[i] = colSnakePosition[i - 1];
   }
 }
@@ -1092,7 +1092,8 @@ void returnToMenu() {
         lc.setRow(0, i, matrixShapes[6][i]);
       }
       delay(2500);
-      song();
+      if(sound)
+        song();
     } else {
       lcd.clear();
       lcd.setCursor(0, 0);
@@ -1267,7 +1268,7 @@ void returnToMenu() {
     state = MAIN_MENU;
     enterUserNameDisplay = true;
     gameDisplay = false;
-    food = true;
+    shouldGenerateFood = true;
     lcd.clear();
   }
 }
