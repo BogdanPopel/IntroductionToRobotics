@@ -54,7 +54,7 @@ String leaderboardPlaces[leaderboardSize] = { "1st.", "2nd.", "3rd.", "4th.", "5
 bool displayMainMenuPosition = false;
 String newPlayer = "";
 int newScore = 0;
-String emptyString = "";
+
 
 char* introText = "Snake, brought to you by Nokia to enjoy! :)                ";
 char* aboutText = "Homework for IntroductionToRobotics by Popel Bogdan -> Snake Game               ";
@@ -209,7 +209,7 @@ void loop() {
     break;          
   }
   
-  playerName = emptyString;
+  playerName = "";
   for (int i = eepromNameStart + (eepromNameStep * currentRankItem); i < eepromNameStep + (eepromNameStart + (eepromNameStep * currentRankItem)); i++) {
     playerName.concat(char(EEPROM.read(i)));
   }
@@ -291,6 +291,7 @@ void speed(float& speed) {
       }
       colSnakePosition[0] = dotColPosition;
     }
+    
     speed -= 0.5;
     previousSnakeTime = millis();
   }
@@ -312,7 +313,7 @@ void generateFood() {
   for (int i = 0; i <= deleteDotPosition; i++) { //Delete dot position is also the size of the snake
     if (randomRow == rowSnakePosition[i] && randomCol == colSnakePosition[i]) {
       shouldGenerateFood = true;
-    } else {
+    } else { //blink food
       if (millis() - previousTime >= blinkTime) {
         lc.setLed(0, randomRow, randomCol, ledPower);
         if (ledPower) {
@@ -417,7 +418,6 @@ void deleteTail() {
 void displayMenu(byte& state) {
 
   yValue = analogRead(pinY);
-
   // matrix
   for (int i = 0; i < matrixSize; i++) {
     lc.setRow(0, i, matrixShapes[menuPosition-1][i]);
@@ -1253,7 +1253,7 @@ void returnToMenu() {
     for (int i = 0; i < playerNameLength; i++) {
       enterNameLetters[i] = 0;
     }
-    newPlayer = emptyString;
+    newPlayer = "";
     newScore = 0;
     deleteDotPosition = 0;
 
