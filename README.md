@@ -245,8 +245,8 @@ a ton of wires
     
 ### SEE IT IN ACTION:
 
-#### The full [code]() is here.
-#### [Video demonstration]()
+#### The full [code](https://github.com/BogdanPopel/IntroductionToRobotics/tree/main/SnakeGame) is here.
+#### [Video demonstration](https://youtu.be/NwKj02ZCcmk)
 
 <details>
 <summary>This what the end product looks like:</summary>
