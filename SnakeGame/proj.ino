@@ -47,7 +47,7 @@ int currentMenuItem = 0;
 int currentSettingsItem = 0;
 int currentLevelDisplay = 0;
 int currentRankItem = 0;
-String mainMenuElements[mainMenuItems] = { "1. Start Game", "6. Leaderboard", "5. Settings", "4. About", "3. How To Play", "2. Reset Score" };
+String mainMenuElements[mainMenuItems] = { "1. Start Game", "2. Leaderboard", "3. Settings", "4. About", "5. How To Play", "6. Reset Score" };
 String settingsElements[settingsItems] = { "LCD Light:", "Matrix Light:", "Sound:" };
 String levels[levelItems] = { " EASY ", "MEDIUM", " HARD " };
 String leaderboardPlaces[leaderboardSize] = { "1st.", "2nd.", "3rd.", "4th.", "5th.", "6th" };
@@ -88,7 +88,7 @@ volatile byte lcdBrightness = 5;
 const int lcdBrightnessIncrement = 50;
 int matrixBrightness = 5;
 const int matrixBrightnessStep = 3;
-bool sound = true;
+bool sound = false;
 bool resetScoreFlag = false;
 bool gameDisplay = false;
 
