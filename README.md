@@ -215,12 +215,12 @@ a ton of wires
   - resistors and wires per logic
   
 •Technical Task:
+  
   The task consists in creating a mini-game using a led matrix, a lcd screen and a joystick which is as intuitive, complete and fun as possible. The game i chose is Snake, which involves a moving dot that eats randomly spawned blinking dots, the snake growing in doing so.
+  
   The game has 3 levels: 
     - Easy: the snake starts slowly and you don't have blocking walls
-    
     - Medium: the snake starts slowly, but you have blocking walls
-    
     - Hard: the snake starts at a high speed and you have blocking walls
 
 •Coding task: Coding style is of utmost importance.
