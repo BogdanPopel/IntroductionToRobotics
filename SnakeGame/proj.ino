@@ -47,7 +47,7 @@ int currentMenuItem = 0;
 int currentSettingsItem = 0;
 int currentLevelDisplay = 0;
 int currentRankItem = 0;
-String mainMenuElements[mainMenuItems] = { "1. Start Game", "2. Leaderboard", "3. Settings", "4. About", "5. How To Play", "6. Reset Score" };
+String mainMenuElements[mainMenuItems] = { "1. Start Game", "6. Leaderboard", "5. Settings", "4. About", "3. How To Play", "2. Reset Score" };
 String settingsElements[settingsItems] = { "LCD Light:", "Matrix Light:", "Sound:" };
 String levels[levelItems] = { " EASY ", "MEDIUM", " HARD " };
 String leaderboardPlaces[leaderboardSize] = { "1st.", "2nd.", "3rd.", "4th.", "5th.", "6th" };
@@ -592,9 +592,7 @@ void enterUserName() {
   lcd.print(">");
   lcd.setCursor(15, 1);
   lcd.print("<");
-
   moveNameArrow();
-
   // print the name
   lcd.setCursor(enterNameLeftLimitCursor, 1);
   lcd.print(alphabet[enterNameLetters[0]]);
@@ -950,15 +948,12 @@ void readControlMenu(byte& state) {
       buttonLongPressMillis = currentMillis;
       buttonStatePrevious = HIGH;
     }
-
     buttonPressDuration = currentMillis - buttonLongPressMillis;
-
     // long press
     if (buttonValue == HIGH && !buttonLongPressed && buttonPressDuration >= minButtonLongPressDuration) {
       if (sound) {
         tone(buzzerPin, 3500, 20);
       }
-
       if (menuPosition == 1) {
         if (enterUserNameDisplay) {
           enterUserNameDisplay = false;
@@ -966,14 +961,11 @@ void readControlMenu(byte& state) {
           lcd.clear();
         }
       }
-
       buttonLongPressed = true;
     }
-
     if (buttonValue == LOW && buttonStatePrevious == HIGH) {
       buttonStatePrevious = LOW;
       buttonLongPressed = false;
-
       // short press
       if (!buttonLongPressed && buttonPressDuration < minButtonLongPressDuration) {
         if (sound) {
